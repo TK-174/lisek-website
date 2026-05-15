@@ -1,0 +1,23 @@
+e-mail: alalis@salongroomerski.com
+adres:  Niepodległości 49, Leszno, Poland, 64-100
+numer telefonu: 667 837 773
+godziny otwarcia:
+    - poniedziałek - piątek : 8:00-18:00
+    - soboty : 8:00-14:00
+
+Usługi:
+    Kąpiel: Delikatne kosmetyki dopasowane na potrzeby Twojego pupila
+    Strzyżenie: Profesjonalne Strzyżenie zgodne ze standardem rady lub według życzenia
+    Pielęgnacja: Czesaniem, rozczesywanie, usuwanie kołtunów i podsierstka
+    Pielęgnacja Pazurków: Bezpieczne obcinanie i szlifowanie Pazurków
+    Czyszczenie uszu i oczu: Delikatna pielęgnacja dla zdrowia i komfortu
+
+Cennik:
+• Małe psy - 130 zł 
+• Średnie psy - 140 zł 
+• Duże psy - 250 zł 
+• Psy powyżej 40 kg - 300 zł 
+• Obcinanie pazurków - 20 zł
+• Wyciaganie kleszczy - 15 zl
+• Koty krótkowłose (wyczesywanie + obcinanie pazurków)- 110 zł 
+• Koty długowłose (kąpiel + wyczesywanie + obcinanie pazurków) - 170 zł

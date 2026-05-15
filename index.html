@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Lisek Salon Groomerski w Lesznie — profesjonalna pielęgnacja psów i kotów. Kąpiel, strzyżenie, pielęgnacja pazurków. Umów wizytę online." />
+  <meta name="theme-color" content="#F68B1F" />
+  <title>Lisek Salon Groomerski — Profesjonalna pielęgnacja psów i kotów w Lesznie</title>
+
+  <link rel="icon" type="image/png" href="lisek_logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Przejdź do treści</a>
+
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a href="#hero" class="brand" aria-label="Lisek Salon Groomerski — strona główna">
+        <img src="lisek_logo.png" alt="" width="48" height="48" class="brand-logo" />
+        <span class="brand-text">
+          <span class="brand-name">Lisek</span>
+          <span class="brand-sub">Salon Groomerski</span>
+        </span>
+      </a>
+
+      <nav class="site-nav" aria-label="Nawigacja główna">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-list" aria-label="Otwórz menu">
+          <span class="nav-toggle-bar" aria-hidden="true"></span>
+          <span class="nav-toggle-bar" aria-hidden="true"></span>
+          <span class="nav-toggle-bar" aria-hidden="true"></span>
+        </button>
+        <ul id="nav-list" class="nav-list">
+          <li><a href="#about">O salonie</a></li>
+          <li><a href="#services">Usługi</a></li>
+          <li><a href="#pricing">Cennik</a></li>
+          <li><a href="#booking">Rezerwacja</a></li>
+          <li><a href="#contact">Kontakt</a></li>
+        </ul>
+      </nav>
+
+      <a href="#booking" class="btn btn-primary btn-header">Umów wizytę</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ===================== HERO ===================== -->
+    <section id="hero" class="hero" aria-labelledby="hero-title">
+      <div class="hero-bg" aria-hidden="true">
+        <span class="hero-blob hero-blob-1"></span>
+        <span class="hero-blob hero-blob-2"></span>
+      </div>
+
+      <div class="container hero-inner">
+        <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span>Leszno · ul. Niepodległości 49</p>
+
+        <h1 id="hero-title" class="hero-title">
+          Profesjonalna pielęgnacja <em>Twojego pupila</em> w sercu Leszna.
+        </h1>
+
+        <p class="hero-sub">
+          Delikatna kąpiel, precyzyjne strzyżenie i kompleksowa pielęgnacja —
+          w przyjaznej atmosferze, dopasowane do potrzeb każdego psa i kota.
+        </p>
+
+        <div class="hero-ctas">
+          <a href="#booking" class="btn btn-primary btn-lg">
+            Umów wizytę
+            <span class="btn-arrow" aria-hidden="true">→</span>
+          </a>
+          <a href="#pricing" class="btn btn-ghost btn-lg">Zobacz cennik</a>
+        </div>
+
+        <dl class="hero-stats" aria-label="Najważniejsze informacje">
+          <div class="stat">
+            <dt>Godziny pn–pt</dt>
+            <dd>8:00 – 18:00</dd>
+          </div>
+          <div class="stat">
+            <dt>Soboty</dt>
+            <dd>8:00 – 14:00</dd>
+          </div>
+          <div class="stat">
+            <dt>Telefon</dt>
+            <dd><a href="tel:+48667837773">667 837 773</a></dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- ===================== ABOUT / PORTFOLIO ===================== -->
+    <section id="about" class="section about" aria-labelledby="about-title">
+      <div class="container about-grid">
+        <div class="about-copy">
+          <p class="section-label">O salonie</p>
+          <h2 id="about-title" class="section-title">Miejsce, w którym Twój pupil czuje się jak w domu.</h2>
+          <p class="section-lead">
+            Lisek Salon Groomerski to przestrzeń stworzona z myślą o komforcie zwierząt
+            i spokoju ich opiekunów. Pracujemy z pasją, używamy delikatnych kosmetyków
+            i dobieramy strzyżenie zgodnie ze standardem rasy lub Twoimi oczekiwaniami.
+          </p>
+
+          <ul class="about-points">
+            <li>
+              <span class="point-num" aria-hidden="true">01</span>
+              <div>
+                <h3>Indywidualne podejście</h3>
+                <p>Każda wizyta jest dopasowana do temperamentu i potrzeb Twojego pupila.</p>
+              </div>
+            </li>
+            <li>
+              <span class="point-num" aria-hidden="true">02</span>
+              <div>
+                <h3>Bezpieczne kosmetyki</h3>
+                <p>Stosujemy delikatne, hipoalergiczne preparaty sprawdzonych marek.</p>
+              </div>
+            </li>
+            <li>
+              <span class="point-num" aria-hidden="true">03</span>
+              <div>
+                <h3>Pełna pielęgnacja</h3>
+                <p>Od kąpieli i strzyżenia po pazurki, uszy i oczy — wszystko w jednym miejscu.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="about-gallery" aria-label="Galeria realizacji">
+          <figure class="gallery-item gallery-item-lg">
+            <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?auto=format&fit=crop&w=900&q=80"
+                 alt="Pies podczas profesjonalnej pielęgnacji w salonie groomerskim" loading="lazy" />
+          </figure>
+          <figure class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1591946614720-90a587da4a36?auto=format&fit=crop&w=600&q=80"
+                 alt="Mały, zadbany pies po strzyżeniu" loading="lazy" />
+          </figure>
+          <figure class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1601758228041-f3b2795255f1?auto=format&fit=crop&w=600&q=80"
+                 alt="Czesanie długiej sierści psa" loading="lazy" />
+          </figure>
+          <figure class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?auto=format&fit=crop&w=600&q=80"
+                 alt="Spokojny kot podczas pielęgnacji" loading="lazy" />
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SERVICES ===================== -->
+    <section id="services" class="section services" aria-labelledby="services-title">
+      <div class="container">
+        <header class="section-header">
+          <p class="section-label">Usługi</p>
+          <h2 id="services-title" class="section-title">Kompleksowa opieka pod jednym dachem.</h2>
+        </header>
+
+        <ul class="service-grid">
+          <li class="service-card">
+            <span class="service-icon" aria-hidden="true">🛁</span>
+            <h3>Kąpiel</h3>
+            <p>Delikatne kosmetyki dopasowane do potrzeb Twojego pupila.</p>
+          </li>
+          <li class="service-card">
+            <span class="service-icon" aria-hidden="true">✂️</span>
+            <h3>Strzyżenie</h3>
+            <p>Profesjonalne strzyżenie zgodne ze standardem rasy lub według życzenia.</p>
+          </li>
+          <li class="service-card">
+            <span class="service-icon" aria-hidden="true">🐾</span>
+            <h3>Pielęgnacja sierści</h3>
+            <p>Czesanie, rozczesywanie, usuwanie kołtunów i podszerstka.</p>
+          </li>
+          <li class="service-card">
+            <span class="service-icon" aria-hidden="true">💅</span>
+            <h3>Pielęgnacja pazurków</h3>
+            <p>Bezpieczne obcinanie i szlifowanie pazurków.</p>
+          </li>
+          <li class="service-card">
+            <span class="service-icon" aria-hidden="true">👂</span>
+            <h3>Czyszczenie uszu i oczu</h3>
+            <p>Delikatna pielęgnacja dla zdrowia i komfortu.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===================== PRICING ===================== -->
+    <section id="pricing" class="section pricing" aria-labelledby="pricing-title">
+      <div class="container">
+        <header class="section-header">
+          <p class="section-label">Cennik</p>
+          <h2 id="pricing-title" class="section-title">Przejrzyste ceny, bez ukrytych kosztów.</h2>
+          <p class="section-lead">
+            Ostateczna cena zależy od stanu sierści, wielkości i temperamentu pupila.
+            W razie wątpliwości — zadzwoń, doradzimy.
+          </p>
+        </header>
+
+        <div class="pricing-grid">
+          <article class="price-group">
+            <h3 class="price-group-title">Psy</h3>
+            <ul class="price-list">
+              <li><span>Małe psy</span><span class="price">130 zł</span></li>
+              <li><span>Średnie psy</span><span class="price">140 zł</span></li>
+              <li><span>Duże psy</span><span class="price">250 zł</span></li>
+              <li><span>Psy powyżej 40 kg</span><span class="price">300 zł</span></li>
+            </ul>
+          </article>
+
+          <article class="price-group">
+            <h3 class="price-group-title">Koty</h3>
+            <ul class="price-list">
+              <li>
+                <span>Koty krótkowłose<small>wyczesywanie + obcinanie pazurków</small></span>
+                <span class="price">110 zł</span>
+              </li>
+              <li>
+                <span>Koty długowłose<small>kąpiel + wyczesywanie + obcinanie pazurków</small></span>
+                <span class="price">170 zł</span>
+              </li>
+            </ul>
+          </article>
+
+          <article class="price-group">
+            <h3 class="price-group-title">Usługi dodatkowe</h3>
+            <ul class="price-list">
+              <li><span>Obcinanie pazurków</span><span class="price">20 zł</span></li>
+              <li><span>Wyciąganie kleszczy</span><span class="price">15 zł</span></li>
+            </ul>
+          </article>
+        </div>
+
+        <p class="pricing-cta">
+          <a href="#booking" class="btn btn-primary">Umów wizytę online</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- ===================== BOOKING (Booksy) ===================== -->
+    <section id="booking" class="section booking" aria-labelledby="booking-title">
+      <div class="container booking-inner">
+        <header class="section-header">
+          <p class="section-label">Rezerwacja</p>
+          <h2 id="booking-title" class="section-title">Zarezerwuj termin online przez Booksy.</h2>
+          <p class="section-lead">
+            Wybierz dogodny termin i usługę — potwierdzenie przyjdzie do Ciebie automatycznie.
+          </p>
+        </header>
+
+        <div class="booksy-frame" id="booksy-widget" aria-label="Widget rezerwacji Booksy">
+          <!--
+            Booksy widget placeholder.
+            Replace the iframe src with the salon's real Booksy embed URL, e.g.:
+            https://booksy.com/widget/index.html?id=YOUR_BUSINESS_ID&country=pl&lang=pl
+          -->
+          <iframe
+            title="Rezerwacja wizyty w Lisek Salon Groomerski (Booksy)"
+            src="about:blank"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+
+          <div class="booksy-fallback">
+            <p><strong>Widget Booksy zostanie wkrótce uruchomiony.</strong></p>
+            <p>W międzyczasie możesz umówić wizytę telefonicznie lub mailowo:</p>
+            <p class="booksy-contacts">
+              <a href="tel:+48667837773" class="btn btn-primary">📞 667 837 773</a>
+              <a href="mailto:alalis@salongroomerski.com" class="btn btn-ghost">✉️ Napisz do nas</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CONTACT ===================== -->
+    <section id="contact" class="section contact" aria-labelledby="contact-title">
+      <div class="container contact-grid">
+        <div class="contact-info">
+          <p class="section-label">Kontakt</p>
+          <h2 id="contact-title" class="section-title">Odwiedź nas lub zadzwoń.</h2>
+
+          <ul class="contact-list">
+            <li>
+              <span class="contact-label">Adres</span>
+              <a href="https://maps.google.com/?q=Niepodległości+49,+Leszno"
+                 target="_blank" rel="noopener noreferrer">
+                ul. Niepodległości 49<br />64-100 Leszno
+              </a>
+            </li>
+            <li>
+              <span class="contact-label">Telefon</span>
+              <a href="tel:+48667837773">667 837 773</a>
+            </li>
+            <li>
+              <span class="contact-label">E-mail</span>
+              <a href="mailto:alalis@salongroomerski.com">alalis@salongroomerski.com</a>
+            </li>
+            <li>
+              <span class="contact-label">Godziny otwarcia</span>
+              <span>
+                Poniedziałek – Piątek: 8:00 – 18:00<br />
+                Sobota: 8:00 – 14:00<br />
+                Niedziela: nieczynne
+              </span>
+            </li>
+          </ul>
+        </div>
+
+        <form class="contact-form" id="contact-form" novalidate
+              aria-labelledby="form-title" aria-describedby="form-desc">
+          <h3 id="form-title" class="form-title">Napisz do nas</h3>
+          <p id="form-desc" class="form-desc">
+            Wypełnij formularz, a otworzymy gotową wiadomość w Twojej skrzynce pocztowej.
+          </p>
+
+          <div class="field">
+            <label for="cf-name">Imię i nazwisko <span aria-hidden="true">*</span></label>
+            <input id="cf-name" name="name" type="text" required autocomplete="name" />
+          </div>
+
+          <div class="field">
+            <label for="cf-email">Adres e-mail <span aria-hidden="true">*</span></label>
+            <input id="cf-email" name="email" type="email" required autocomplete="email" />
+          </div>
+
+          <div class="field">
+            <label for="cf-pet">O Twoim pupilu (opcjonalnie)</label>
+            <input id="cf-pet" name="pet" type="text" placeholder="np. labrador, 25 kg" />
+          </div>
+
+          <div class="field">
+            <label for="cf-message">Wiadomość <span aria-hidden="true">*</span></label>
+            <textarea id="cf-message" name="message" rows="5" required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-lg">Wyślij wiadomość</button>
+          <p class="form-status" id="cf-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img src="lisek_logo.png" alt="" width="40" height="40" />
+        <div>
+          <p class="footer-name">Lisek Salon Groomerski</p>
+          <p class="footer-tag">Profesjonalna pielęgnacja psów i kotów w Lesznie.</p>
+        </div>
+      </div>
+
+      <nav class="footer-nav" aria-label="Stopka — nawigacja">
+        <h2 class="footer-heading">Salon</h2>
+        <ul>
+          <li><a href="#about">O salonie</a></li>
+          <li><a href="#services">Usługi</a></li>
+          <li><a href="#pricing">Cennik</a></li>
+          <li><a href="#booking">Rezerwacja</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer-contact">
+        <h2 class="footer-heading">Kontakt</h2>
+        <address>
+          ul. Niepodległości 49<br />
+          64-100 Leszno<br />
+          <a href="tel:+48667837773">667 837 773</a><br />
+          <a href="mailto:alalis@salongroomerski.com">alalis@salongroomerski.com</a>
+        </address>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; <span id="year"></span> Lisek Salon Groomerski. Wszystkie prawa zastrzeżone.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js" defer></script>
+</body>
+</html>
