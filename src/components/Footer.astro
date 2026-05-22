@@ -1,0 +1,71 @@
+---
+import { salon } from '@/data/salon';
+const logoSrc = `${import.meta.env.BASE_URL}lisek_logo.png`;
+const year = new Date().getFullYear();
+---
+
+<footer class="border-t border-line bg-background" aria-labelledby="footer-tytul">
+  <div class="container-px py-12 sm:py-16">
+    <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+      <div class="sm:col-span-2 lg:col-span-1">
+        <a href="#top" class="flex items-center gap-3" aria-label={`${salon.name} — strona główna`}>
+          <img
+            src={logoSrc}
+            alt=""
+            width={40}
+            height={40}
+            class="h-10 w-10 rounded-full object-cover ring-1 ring-line"
+          />
+          <span id="footer-tytul" class="font-display text-base font-semibold">
+            {salon.name}
+          </span>
+        </a>
+        <p class="mt-4 max-w-xs text-body-sm text-ink-secondary">{salon.tagline}</p>
+      </div>
+
+      <nav aria-label="Stopka — nawigacja">
+        <h3 class="label">Strona</h3>
+        <ul class="mt-3 space-y-2 text-body-sm">
+          <li><a href="#o-nas" class="hover:underline">O nas</a></li>
+          <li><a href="#uslugi" class="hover:underline">Usługi</a></li>
+          <li><a href="#cennik" class="hover:underline">Cennik</a></li>
+          <li><a href="#rezerwacja" class="hover:underline">Rezerwacja</a></li>
+        </ul>
+      </nav>
+
+      <div>
+        <h3 class="label">Kontakt</h3>
+        <ul class="mt-3 space-y-2 text-body-sm">
+          <li>{salon.address}</li>
+          <li>
+            <a href={`tel:${salon.phoneHref}`} class="hover:underline">{salon.phone}</a>
+          </li>
+          <li>
+            <a href={`mailto:${salon.email}`} class="hover:underline">{salon.email}</a>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="label">Godziny</h3>
+        <ul class="mt-3 space-y-2 text-body-sm">
+          {
+            salon.hours.map((h) => (
+              <li>
+                <span class="text-ink-primary">{h.days}</span>
+                <span class="mx-2 text-ink-secondary">·</span>
+                <span class="text-ink-secondary">{h.hours}</span>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-12 flex flex-col items-start justify-between gap-3 border-t border-line pt-6 sm:flex-row sm:items-center">
+      <p class="text-body-sm text-ink-secondary">
+        © {year} {salon.name}. Wszystkie prawa zastrzeżone.
+      </p>
+    </div>
+  </div>
+</footer>

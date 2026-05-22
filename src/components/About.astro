@@ -1,0 +1,115 @@
+---
+import { salon } from '@/data/salon';
+---
+
+<section id="o-nas" class="section-y" aria-labelledby="o-nas-tytul">
+  <div class="container-px">
+    <div class="grid gap-10 lg:grid-cols-12 lg:gap-16">
+      <div class="lg:col-span-5">
+        <span class="label">O salonie</span>
+        <h2
+          id="o-nas-tytul"
+          class="mt-3 text-display-sm sm:text-display-md font-display font-medium"
+        >
+          Spokojne miejsce stworzone z myślą o pupilach.
+        </h2>
+        <p class="mt-5 text-body-md text-ink-secondary">
+          {salon.name} to kameralny salon groomerski w sercu Leszna. Pracujemy z każdą rasą i każdym
+          temperamentem — bez pośpiechu, z poszanowaniem komfortu i bezpieczeństwa zwierzęcia.
+        </p>
+        <p class="mt-4 text-body-md text-ink-secondary">
+          Używamy delikatnych kosmetyków dobranych do typu sierści, narzędzi sterylizowanych po
+          każdym kliencie i metod pielęgnacji zgodnych ze standardem rasy.
+        </p>
+      </div>
+
+      <ul role="list" class="lg:col-span-7 grid gap-4 sm:grid-cols-2">
+        <li class="card">
+          <span class="label">01</span>
+          <h3 class="mt-2 font-display text-lg font-semibold">Indywidualne podejście</h3>
+          <p class="mt-2 text-body-sm text-ink-secondary">
+            Każda wizyta zaczyna się od rozmowy o oczekiwaniach i potrzebach Twojego pupila.
+          </p>
+        </li>
+        <li class="card">
+          <span class="label">02</span>
+          <h3 class="mt-2 font-display text-lg font-semibold">Bezpieczne kosmetyki</h3>
+          <p class="mt-2 text-body-sm text-ink-secondary">
+            Hipoalergiczne, dopasowane do skóry i typu sierści — bez zbędnych dodatków.
+          </p>
+        </li>
+        <li class="card">
+          <span class="label">03</span>
+          <h3 class="mt-2 font-display text-lg font-semibold">Bez stresu</h3>
+          <p class="mt-2 text-body-sm text-ink-secondary">
+            Pracujemy w spokojnym rytmie. Przerwy, pochwały i czas na oswojenie się z salonem.
+          </p>
+        </li>
+        <li class="card">
+          <span class="label">04</span>
+          <h3 class="mt-2 font-display text-lg font-semibold">Standard rasy</h3>
+          <p class="mt-2 text-body-sm text-ink-secondary">
+            Strzyżenie zgodne z wzorcem rasy lub indywidualnym życzeniem opiekuna.
+          </p>
+        </li>
+      </ul>
+    </div>
+
+    <div
+      id="certyfikaty"
+      class="mt-16 border-t border-line pt-12 sm:mt-20 sm:pt-16"
+      aria-labelledby="certyfikaty-tytul"
+    >
+      <div class="max-w-3xl">
+        <span class="label">Kwalifikacje</span>
+        <h3
+          id="certyfikaty-tytul"
+          class="mt-3 font-display text-display-sm font-medium sm:text-display-md"
+        >
+          Nasze kwalifikacje i certyfikaty.
+        </h3>
+        <p class="mt-4 text-body-md text-ink-secondary">
+          Nieustannie się rozwijamy, aby świadczyć usługi na najwyższym możliwym poziomie.
+          Bezpieczeństwo i piękny wygląd Twojego pupila są u nas poparte twardą wiedzą i państwowymi
+          dyplomami.
+        </p>
+      </div>
+
+      <ul role="list" class="mt-8 grid gap-4 sm:grid-cols-2">
+        {
+          salon.certificates.map((cert) => (
+            <li
+              class:list={[
+                'card flex flex-col',
+                cert.upcoming && 'border-dashed bg-background',
+              ]}
+              aria-label={cert.upcoming ? `${cert.title} — w przygotowaniu` : cert.title}
+            >
+              <div class="flex items-start justify-between gap-3">
+                <span class="label">{cert.upcoming ? 'Wkrótce' : 'Certyfikat'}</span>
+                <span
+                  aria-hidden="true"
+                  class:list={[
+                    'inline-flex h-10 w-10 items-center justify-center rounded-full text-lg',
+                    cert.upcoming
+                      ? 'bg-ink-secondary/10 text-ink-secondary'
+                      : 'bg-primary/15 text-primary',
+                  ]}
+                >
+                  {cert.upcoming ? '…' : '✓'}
+                </span>
+              </div>
+              <h4 class="mt-3 font-display text-xl font-semibold text-ink-primary">{cert.title}</h4>
+              {cert.holder && (
+                <p class="mt-1 font-mono text-label-md uppercase tracking-wider text-primary">
+                  {cert.holder}
+                </p>
+              )}
+              <p class="mt-3 text-body-sm text-ink-secondary">{cert.description}</p>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </div>
+</section>

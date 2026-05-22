@@ -1,0 +1,83 @@
+---
+import { salon } from '@/data/salon';
+import HeroGallery, { type GalleryPhoto } from '@/components/HeroGallery.tsx';
+
+const galleryPhotos: GalleryPhoto[] = [
+  {
+    src: 'https://picsum.photos/seed/lisek-gallery-1/1200/900',
+    alt: 'Pies podczas pielęgnacji w salonie',
+  },
+  {
+    src: 'https://picsum.photos/seed/lisek-gallery-2/1200/900',
+    alt: 'Kot szykowany do strzyżenia',
+  },
+  {
+    src: 'https://picsum.photos/seed/lisek-gallery-3/1200/900',
+    alt: 'Wnętrze salonu groomerskiego',
+  },
+  {
+    src: 'https://picsum.photos/seed/lisek-gallery-4/1200/900',
+    alt: 'Efekt po pielęgnacji — zadowolony pupil',
+  },
+];
+---
+
+<section id="top" class="relative overflow-hidden">
+  <div
+    aria-hidden="true"
+    class="absolute inset-0 -z-10 bg-[radial-gradient(60%_60%_at_50%_0%,rgba(253,184,19,0.25),transparent_60%),radial-gradient(40%_40%_at_85%_30%,rgba(246,139,31,0.18),transparent_60%)]"
+  >
+  </div>
+
+  <div class="container-px pt-12 pb-16 sm:pt-20 sm:pb-24 lg:pt-28 lg:pb-32">
+    <div class="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+      <div>
+        <span class="label">Salon Groomerski · Leszno</span>
+        <h1
+          class="mt-4 text-display-sm sm:text-display-md lg:text-display-lg font-display font-medium text-ink-primary"
+        >
+          Profesjonalna pielęgnacja Twojego psa i kota.
+        </h1>
+        <p class="mt-6 max-w-xl text-body-md text-ink-secondary">
+          {salon.tagline} Strzyżenie, kąpiel, pielęgnacja pazurków i uszu — wszystko w spokojnej,
+          przyjaznej atmosferze.
+        </p>
+
+        <div class="mt-8 flex flex-wrap items-center gap-3">
+          <a href="#rezerwacja" class="btn-primary">Umów wizytę</a>
+          <a href="#cennik" class="btn-ghost">Zobacz cennik</a>
+        </div>
+
+        <dl class="mt-10 grid max-w-md grid-cols-3 gap-4">
+          <div>
+            <dt class="label">Doświadczenie</dt>
+            <dd class="mt-1 font-display text-2xl font-medium">10+ lat</dd>
+          </div>
+          <div>
+            <dt class="label">Usługi</dt>
+            <dd class="mt-1 font-display text-2xl font-medium">{salon.services.length}</dd>
+          </div>
+          <div>
+            <dt class="label">Pupile</dt>
+            <dd class="mt-1 font-display text-2xl font-medium">psy · koty</dd>
+          </div>
+        </dl>
+      </div>
+
+      <div class="relative">
+        <div
+          aria-hidden="true"
+          class="absolute -inset-6 -z-10 rounded-card bg-gradient-to-br from-primary/20 via-accent/20 to-transparent blur-2xl"
+        >
+        </div>
+
+        <HeroGallery
+          client:visible
+          photos={galleryPhotos}
+          caption={`Nasz Salon · ${salon.city}`}
+          placeholderNote="Wkrótce — realne zdjęcia"
+        />
+      </div>
+    </div>
+  </div>
+</section>

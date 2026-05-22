@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  body {
+    @apply bg-background text-ink-primary font-body antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display text-ink-primary;
+  }
+
+  :focus-visible {
+    @apply outline-none ring-2 ring-primary ring-offset-2 ring-offset-background rounded-control;
+  }
+
+  ::selection {
+    @apply bg-primary/20 text-ink-primary;
+  }
+}
+
+@layer components {
+  .container-px {
+    @apply mx-auto w-full max-w-container px-5 sm:px-6 lg:px-8;
+  }
+
+  .section-y {
+    @apply py-16 sm:py-20 lg:py-section;
+  }
+
+  .label {
+    @apply font-mono text-label-md uppercase tracking-wider text-ink-secondary;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-pill px-6 py-3
+           font-display text-sm font-semibold transition-all duration-200
+           focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2;
+  }
+
+  .btn-primary {
+    @apply btn bg-primary text-white shadow-card hover:bg-primary/90 hover:shadow-lift active:translate-y-px;
+  }
+
+  .btn-ghost {
+    @apply btn border border-ink-primary/15 bg-surface text-ink-primary hover:border-ink-primary/30 hover:bg-surface/80;
+  }
+
+  .card {
+    @apply bg-surface border border-line rounded-card p-card shadow-card;
+  }
+
+  .skip-link {
+    @apply sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50
+           focus:rounded-control focus:bg-ink-primary focus:px-4 focus:py-2 focus:text-white;
+  }
+}

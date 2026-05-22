@@ -24,8 +24,10 @@
 - Ensure full web accessibility by actively implementing semantic HTML5, appropriate ARIA roles and labels, full keyboard navigation compatibility, and proper color contrast ratios.
 - Treat accessibility as a core feature, not an afterthought.
 
-## 5. Tooling & Frameworks
-- **everything-claude-code:** You are explicitly required to actively use all tools, scripts, and capabilities provided by the **`everything-claude-code`** framework. Maximize your efficiency by utilizing the full spectrum of available commands for file management, code generation, and terminal execution. Do not limit yourself to basic commands.
+## 5. Technology Stack, Tooling & Frameworks
+- **Primary Language:** You MUST use **TypeScript** as the primary programming language for all logic to ensure type safety, robust architecture, and code quality. Do not use plain JavaScript (.js) unless strictly required by a specific third-party script.
+- **Modern Frameworks:** Utilize a modern frontend stack (e.g., Vite, React, or Next.js) combined with a utility-first CSS framework (like Tailwind CSS) to efficiently build the UI.
+- **everything-claude-code:** You are explicitly required to actively use all tools, scripts, and capabilities provided by the **`everything-claude-code`** framework. Maximize your efficiency by utilizing the full spectrum of available commands for file management, code generation, and terminal execution.
 
 ## 6. Coding Rules
 - Work step-by-step, ensuring a given component works before moving on to the next one.
