@@ -115,7 +115,7 @@ export default function HeroGallery({
           Zdjęcie {index + 1} z {total}: {photos[index]?.alt}
         </div>
 
-        <ul
+        <div
           id={rotationId}
           aria-live="off"
           className="relative aspect-[4/3] w-full"
@@ -123,7 +123,7 @@ export default function HeroGallery({
           {photos.map((photo, i) => {
             const active = i === index;
             return (
-              <li
+              <div
                 key={`slide-${i}-${photo.src}`}
                 role="group"
                 aria-roledescription="slajd"
@@ -142,17 +142,17 @@ export default function HeroGallery({
                   className="h-full w-full object-cover"
                   draggable={false}
                 />
-              </li>
+              </div>
             );
           })}
-        </ul>
+        </div>
 
         <button
           type="button"
           onClick={goPrev}
           aria-label="Poprzednie zdjęcie"
           aria-controls={rotationId}
-          className="absolute left-2 top-1/2 inline-flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-line bg-surface/90 text-ink-primary shadow-card transition hover:bg-surface focus-visible:ring-2 focus-visible:ring-primary"
+          className="absolute left-2 top-1/2 inline-flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-line bg-surface/90 text-ink-primary shadow-card transition hover:bg-surface focus-visible:ring-2 focus-visible:ring-primary-dark"
         >
           <span aria-hidden="true">‹</span>
         </button>
@@ -161,7 +161,7 @@ export default function HeroGallery({
           onClick={goNext}
           aria-label="Następne zdjęcie"
           aria-controls={rotationId}
-          className="absolute right-2 top-1/2 inline-flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-line bg-surface/90 text-ink-primary shadow-card transition hover:bg-surface focus-visible:ring-2 focus-visible:ring-primary"
+          className="absolute right-2 top-1/2 inline-flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-line bg-surface/90 text-ink-primary shadow-card transition hover:bg-surface focus-visible:ring-2 focus-visible:ring-primary-dark"
         >
           <span aria-hidden="true">›</span>
         </button>
@@ -181,8 +181,8 @@ export default function HeroGallery({
                 aria-controls={rotationId}
                 aria-label={`Pokaż zdjęcie ${i + 1} z ${total}`}
                 onClick={() => goTo(i)}
-                className={`h-2.5 rounded-full transition-all focus-visible:ring-2 focus-visible:ring-primary ${
-                  active ? 'w-6 bg-primary' : 'w-2.5 bg-ink-primary/25 hover:bg-ink-primary/45'
+                className={`h-2.5 rounded-full transition-all focus-visible:ring-2 focus-visible:ring-primary-dark ${
+                  active ? 'w-6 bg-primary-dark' : 'w-2.5 bg-ink-secondary hover:bg-ink-primary'
                 }`}
               />
             );

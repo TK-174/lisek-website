@@ -85,9 +85,9 @@ export default function PricingTabs({ categories }: Props) {
               onKeyDown={(e) => onKeyDown(e, i)}
               className={[
                 'rounded-pill px-5 py-2.5 font-display text-sm font-semibold transition-all duration-200',
-                'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-surface',
+                'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-dark focus-visible:ring-offset-2 focus-visible:ring-offset-surface',
                 selected
-                  ? 'bg-primary text-white shadow-card'
+                  ? 'bg-primary text-ink-primary shadow-card'
                   : 'text-ink-secondary hover:text-ink-primary hover:bg-background/60',
               ].join(' ')}
             >
@@ -107,7 +107,7 @@ export default function PricingTabs({ categories }: Props) {
             aria-labelledby={tabId(cat.id)}
             hidden={!selected}
             tabIndex={0}
-            className="mt-6 rounded-card border border-line bg-surface shadow-card focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+            className="mt-6 rounded-card border border-line bg-surface shadow-card focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-dark"
           >
             <div className="border-b border-line px-5 py-4 sm:px-6">
               <h3 className="font-display text-lg font-semibold text-ink-primary">{cat.label}</h3>

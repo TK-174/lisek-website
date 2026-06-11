@@ -6,6 +6,9 @@ const config: Config = {
     extend: {
       colors: {
         primary: '#F68B1F',
+        // Darkened primary (same hue) for text/focus on light surfaces — #F68B1F
+        // alone is 2.4:1 and fails WCAG AA; this passes 4.5:1 on white & background.
+        'primary-dark': '#995613',
         secondary: '#F2EAD3',
         accent: '#FDB813',
         background: '#F2EAD3',

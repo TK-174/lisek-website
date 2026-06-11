@@ -57,6 +57,7 @@ import { salon } from '@/data/salon';
 
     <div
       id="certyfikaty"
+      role="region"
       class="mt-16 border-t border-line pt-12 sm:mt-20 sm:pt-16"
       aria-labelledby="certyfikaty-tytul"
     >
@@ -93,7 +94,7 @@ import { salon } from '@/data/salon';
                     'inline-flex h-10 w-10 items-center justify-center rounded-full text-lg',
                     cert.upcoming
                       ? 'bg-ink-secondary/10 text-ink-secondary'
-                      : 'bg-primary/15 text-primary',
+                      : 'bg-primary/15 text-primary-dark',
                   ]}
                 >
                   {cert.upcoming ? '…' : '✓'}
@@ -101,7 +102,7 @@ import { salon } from '@/data/salon';
               </div>
               <h4 class="mt-3 font-display text-xl font-semibold text-ink-primary">{cert.title}</h4>
               {cert.holder && (
-                <p class="mt-1 font-mono text-label-md uppercase tracking-wider text-primary">
+                <p class="mt-1 font-mono text-label-md uppercase tracking-wider text-primary-dark">
                   {cert.holder}
                 </p>
               )}

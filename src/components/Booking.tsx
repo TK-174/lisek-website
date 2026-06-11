@@ -27,8 +27,8 @@ export default function Booking({ booksyUrl, phone, phoneHref }: Props) {
       <span className="label">Booksy · wkrótce</span>
       <h3 className="mt-3 font-display text-2xl font-medium">Widget rezerwacji jest w przygotowaniu.</h3>
       <p className="mx-auto mt-3 max-w-xl text-body-md text-ink-secondary">
-        Zanim widget Booksy zostanie zintegrowany, zarezerwuj wizytę telefonicznie. Zadzwonimy też,
-        jeśli zostawisz wiadomość przez formularz kontaktowy.
+        Zanim widget Booksy zostanie zintegrowany, zarezerwuj wizytę telefonicznie lub napisz do
+        nas — dane znajdziesz w sekcji Kontakt poniżej.
       </p>
       <a href={`tel:${phoneHref}`} className="btn-primary mt-6 inline-flex">
         Zadzwoń — {phone}

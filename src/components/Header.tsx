@@ -53,7 +53,7 @@ export default function Header({ logoSrc, salonName }: Props) {
       <div className="container-px flex h-16 items-center justify-between sm:h-20">
         <a
           href="#top"
-          className="flex items-center gap-3 rounded-control focus-visible:ring-2 focus-visible:ring-primary"
+          className="flex items-center gap-3 rounded-control focus-visible:ring-2 focus-visible:ring-primary-dark"
           aria-label={`${salonName} — strona główna`}
         >
           <img

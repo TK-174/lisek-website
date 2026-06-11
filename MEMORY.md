@@ -103,6 +103,27 @@ npm run typecheck  # astro check
 
 ## Code review log
 
+### 2026-06-11 — Full site QA pass (Playwright + axe-core) & bug fixes
+
+**Tested:** built site served via `astro preview`, Playwright (desktop 1280px + mobile 390px, touch): nav anchors, pricing-tabs mouse/keyboard (←/→ wrap, Home/End), gallery next/prev + live region, mobile hamburger open/close/ESC/body-scroll-lock, skip-link, tel/mailto links, horizontal-overflow scan, axe-core scan. External hosts (picsum, fonts, maps) occasionally blocked by sandbox proxy — not site bugs.
+
+**Findings & fixes (all verified after fix — axe: 0 violations):**
+
+| Severity | Issue | Fix |
+|---|---|---|
+| HIGH (WCAG 1.4.3) | 18 axe color-contrast failures: white text on `#F68B1F` buttons/tabs (2.43:1) and orange `#F68B1F` text on white/background (2.0–2.4:1). | Added **`primary-dark: #995613`** token (same hue, ≥4.5:1 on white, `background`, and rabat tints). `.btn-primary` + active pricing tab now use `text-ink-primary` on orange (7.3:1). All orange text (`-50%` figures, labels, cert holder, service links, Offer subheading) → `text-primary-dark`. Focus rings → `ring-primary-dark`; gallery dots use `primary-dark` / `ink-secondary`. |
+| HIGH | Anchor links scrolled section tops under the sticky header (80px hidden). | `scroll-padding-top: 6rem` on `html` in `globals.css`. |
+| MEDIUM (axe serious) | `HeroGallery` slides: `<ul>` whose `<li>`s had `role="group"` → invalid list semantics (`list` + `aria-allowed-role` violations). | Slides container/items are now `<div>`s (APG carousel pattern). |
+| MEDIUM | Offer copy bug: "…otrzymuje u nas:" (colon) was followed by an unrelated paragraph, with the benefits list further down. | Reordered: colon → 3 benefit cards → "Bo wiemy…" paragraph. |
+| LOW | Booking fallback referenced a non-existent "formularz kontaktowy". | Copy now points to phone + Kontakt section. |
+| LOW | Footer nav missing Oferta/Kontakt; `#certyfikaty` div had `aria-labelledby` without a role (no-op). | Added links; added `role="region"`. |
+
+**Validation:** `astro check` 0 errors, build green, all Playwright checks pass, axe-core 0 violations, no horizontal overflow at 390px, anchor target lands 16px below header.
+
+**Note:** `DESIGN.md` palette has no accessible orange for small text; `primary-dark #995613` was derived from `primary` (same hue, darkened) to satisfy CLAUDE.md §4 strict-WCAG, which takes precedence. `primary #F68B1F` unchanged for fills/gradients.
+
+---
+
 ### 2026-05-22 — Local review of session changes (Offer, About+Certyfikaty, Hero+HeroGallery, salon.ts)
 
 **Scope:** uncommitted changes from this session only (the prior-session Astro rewrite was reviewed at commit `a61ee2c`).
@@ -131,4 +152,5 @@ npm run typecheck  # astro check
 ## Progress log
 - 2026-05-15: Created MEMORY.md, read CLAUDE.md / DESIGN.md / info.txt. Built first version in plain HTML/CSS/JS. Deployed to GH Pages.
 - 2026-05-16: **Rewrite per CLAUDE.md §5** (TS + modern framework + Tailwind). Stack: Astro 5 + React 18 islands + Tailwind v3 + TS strict. Moved old files to `legacy/`. New structure: `src/{components,data,layouts,pages,styles}`. All Polish copy preserved. WCAG basics in place. `npm run build` and `npm run typecheck` both green (0 errors). Booksy slot still placeholder.
+- 2026-06-11: **QA + bugfix pass** — full Playwright/axe test of built site; fixed WCAG contrast (new `primary-dark` token), sticky-header anchor offset, carousel list semantics, Offer copy order, Booking fallback copy, footer nav. axe: 0 violations. Details in Code review log above.
 - 2026-05-16: **Pricing tabs** added. Updated `info.txt` now groups prices into Psy / Koty / Inne — `salon.pricing` restructured to `PriceCategory[]` (typed `PriceCategoryId = 'psy' | 'koty' | 'inne'`). New `PricingTabs.tsx` island implements the full WAI-ARIA Tabs pattern (tablist/tab/tabpanel, aria-selected, aria-controls, roving tabindex) with keyboard nav: ←/→ (wrap), Home/End, Space/Enter. Only the active panel is visible (others use the `hidden` attribute). Mobile-first responsive. Typecheck + build green.
