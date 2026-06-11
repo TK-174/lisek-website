@@ -1,0 +1,157 @@
+---
+import { salon } from '@/data/salon';
+import PricingTabs from '@/components/PricingTabs.tsx';
+---
+
+<section id="uslugi" class="section-y" aria-labelledby="uslugi-tytul">
+  <div class="container-px">
+    <div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+      <div class="max-w-2xl">
+        <span class="label">Usługi i cennik</span>
+        <h2
+          id="uslugi-tytul"
+          class="mt-3 text-display-sm sm:text-display-md font-display font-medium"
+        >
+          Pełen zakres pielęgnacji, przejrzyste ceny.
+        </h2>
+        <p class="mt-4 text-body-md text-ink-secondary">
+          Od kąpieli po profesjonalne strzyżenie — dobieramy zabieg do indywidualnych potrzeb
+          Twojego pupila. Ostateczny koszt może się różnić w zależności od stanu sierści i
+          wielkości pupila.
+        </p>
+      </div>
+      <a href="#rezerwacja" class="btn-primary self-start sm:self-end">Umów wizytę</a>
+    </div>
+
+    <ul role="list" class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        salon.services.map((service, idx) => (
+          <li class="card flex flex-col">
+            <span class="label">{String(idx + 1).padStart(2, '0')}</span>
+            <h3 class="mt-3 font-display text-xl font-semibold text-ink-primary">
+              {service.title}
+            </h3>
+            <p class="mt-2 text-body-sm text-ink-secondary">{service.description}</p>
+          </li>
+        ))
+      }
+    </ul>
+
+    <div id="cennik" role="region" aria-labelledby="cennik-tytul" class="mt-16 sm:mt-20">
+      <span class="label">Cennik</span>
+      <h3
+        id="cennik-tytul"
+        class="mt-3 font-display text-2xl font-medium text-ink-primary sm:text-3xl"
+      >
+        Ile kosztuje pielęgnacja?
+      </h3>
+      <PricingTabs client:visible categories={salon.pricing} />
+    </div>
+
+    <div id="oferta" role="region" aria-labelledby="oferta-tytul" class="mt-16 sm:mt-20">
+      <span class="label">Oferty specjalne</span>
+      <h3
+        id="oferta-tytul"
+        class="mt-3 font-display text-2xl font-medium text-ink-primary sm:text-3xl"
+      >
+        Z nami płacisz mniej.
+      </h3>
+
+      <div class="mt-8 grid gap-4 lg:grid-cols-2">
+        <article
+          class="card relative flex flex-col overflow-hidden border-primary/30"
+          aria-labelledby="oferta-adopcja-tytul"
+        >
+          <div
+            aria-hidden="true"
+            class="pointer-events-none absolute -top-16 -right-16 h-48 w-48 rounded-full bg-primary/10 blur-2xl"
+          >
+          </div>
+          <div class="relative flex items-start justify-between gap-4">
+            <span class="label text-primary-dark">Rabat adopcyjny</span>
+            <p class="text-right">
+              <span class="block font-display text-4xl font-semibold leading-none text-primary-dark">
+                −50%
+              </span>
+              <span class="mt-1 block font-mono text-label-md uppercase tracking-wider text-ink-secondary">
+                pierwsza wizyta
+              </span>
+            </p>
+          </div>
+          <h4
+            id="oferta-adopcja-tytul"
+            class="relative mt-4 font-display text-xl font-semibold text-ink-primary"
+          >
+            Adoptowałeś przyjaciela? Pomożemy mu poczuć się jak w domu.
+          </h4>
+          <p class="relative mt-3 text-body-sm text-ink-secondary">
+            Wspólnie ze schroniskiem w Dalabuszkach wspieramy adopcje. Każdy pies i kot adoptowany
+            — teraz lub kiedyś — otrzymuje u nas <strong class="font-semibold text-ink-primary">−50% na
+            pierwszą wizytę pielęgnacyjną</strong>: spokojną metamorfozę, łagodne kosmetyki i dużo
+            cierpliwości. Bo początki w nowym domu bywają stresujące, a delikatna pielęgnacja pomaga
+            poczuć bezpieczeństwo.
+          </p>
+          <p class="relative mt-4 font-mono text-label-md uppercase tracking-wider text-ink-secondary">
+            Przy rezerwacji wspomnij o adopcji
+          </p>
+          <a href="#rezerwacja" class="btn-primary relative mt-5 self-start">
+            Umów wizytę z rabatem
+          </a>
+        </article>
+
+        <article
+          class="card relative flex flex-col overflow-hidden border-primary/30"
+          aria-labelledby="oferta-karta-tytul"
+        >
+          <div
+            aria-hidden="true"
+            class="pointer-events-none absolute -top-16 -left-16 h-48 w-48 rounded-full bg-accent/15 blur-2xl"
+          >
+          </div>
+          <div class="relative flex items-start justify-between gap-4">
+            <span class="label text-primary-dark">Karta stałego klienta</span>
+            <p class="text-right">
+              <span class="block font-display text-4xl font-semibold leading-none text-primary-dark">
+                −50%
+              </span>
+              <span class="mt-1 block font-mono text-label-md uppercase tracking-wider text-ink-secondary">
+                po 6 pieczątkach
+              </span>
+            </p>
+          </div>
+          <h4
+            id="oferta-karta-tytul"
+            class="relative mt-4 font-display text-xl font-semibold text-ink-primary"
+          >
+            Zbieraj pieczątki, odbieraj rabat.
+          </h4>
+          <p class="relative mt-3 text-body-sm text-ink-secondary">
+            Kartę odbierzesz bezpłatnie przy pierwszej wizycie. Po każdej usłudze pielęgnacyjnej
+            dobijamy łapkę — a po sześciu zabiegach kolejna pielęgnacja Twojego pupila jest
+            <strong class="font-semibold text-ink-primary">−50% taniej</strong>. Dziękujemy za
+            zaufanie!
+          </p>
+          <ul
+            role="list"
+            aria-label="Sześć pieczątek do zebrania"
+            class="relative mt-5 flex flex-wrap gap-2"
+          >
+            {
+              Array.from({ length: 6 }).map((_, i) => (
+                <li
+                  class="flex h-10 w-10 items-center justify-center rounded-full border-2 border-dashed border-primary/40 text-base text-primary-dark"
+                  aria-label={`Pieczątka ${i + 1} z 6`}
+                >
+                  <span aria-hidden="true">🐾</span>
+                </li>
+              ))
+            }
+          </ul>
+          <p class="relative mt-5 font-mono text-label-md uppercase tracking-wider text-ink-secondary">
+            Pytaj o kartę przy najbliższej wizycie
+          </p>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>

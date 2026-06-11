@@ -4,8 +4,7 @@ type NavLink = { href: string; label: string };
 
 const links: readonly NavLink[] = [
   { href: '#o-nas', label: 'O nas' },
-  { href: '#uslugi', label: 'Usługi' },
-  { href: '#cennik', label: 'Cennik' },
+  { href: '#uslugi', label: 'Usługi i cennik' },
   { href: '#oferta', label: 'Oferta' },
   { href: '#rezerwacja', label: 'Rezerwacja' },
   { href: '#kontakt', label: 'Kontakt' },

@@ -110,7 +110,7 @@ export default function PricingTabs({ categories }: Props) {
             className="mt-6 rounded-card border border-line bg-surface shadow-card focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-dark"
           >
             <div className="border-b border-line px-5 py-4 sm:px-6">
-              <h3 className="font-display text-lg font-semibold text-ink-primary">{cat.label}</h3>
+              <h4 className="font-display text-lg font-semibold text-ink-primary">{cat.label}</h4>
               <p className="mt-1 text-body-sm text-ink-secondary">{cat.description}</p>
             </div>
 
